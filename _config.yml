@@ -7,7 +7,7 @@ title: 菜鸟修炼手册
 subtitle: 一个工匠的自我修养
 description: 享受生活，奋力奔跑
 author: AlvinXu
-language: zh
+language: zh-Hans
 timezone:
 
 # URL
@@ -78,6 +78,5 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  # repo: git@github.com:alvin-xu/my-hexo-blog.git
   repo: git@github.com:alvin-xu/alvin-xu.github.io.git
   branch: master

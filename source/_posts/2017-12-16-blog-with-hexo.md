@@ -40,6 +40,34 @@ comments: true
    然后使用命令`hexo server`启动服务器，默认运行在4000端口。成功的话，本地浏览器`http://localhost:4000`就能看到效果了。 
    要是启动报错了，就够呛了。。。一般都没有提示具体哪里错了。。。官方有问题页面，自行排查吧。
 
+6. 部署配置
+  暂时部署到github上，使用[github pages]来运行博客。所以hexo配置文件中内容：
+  ```
+  deploy:
+    type: git
+    repo: git@github.com:alvin-xu/alvin-xu.github.io.git
+    branch: master
+  ```
+  使用git进行自动部署，先安装依赖：`npm install hexo-deployer-git --save` 
+  然后直接`hexo deploy`命令。该命令会把`public`目录下的文件直接部署到上面配置的仓库中。这样就完成了网站发布。
+
+  注意，部署之前一般会先生成最新的网站：`hexo generate`
+
+  我其实有点想法部署到自己的服务器上。源码放github上。这样的话，应该要考虑使用github的Webhooks机制，在每次提交代码都触发服务器自动去更新网站。有需要再弄。
+
+## 一些命令
+
+  `hexo new page about`, 在hexo跟目录执行，会在source目录下，新建一个带有index.md的文件夹，新页面的内容添加到此处即可。
+  
+  标签页也需要自行添加，`hexo new page tags`, 页面内容：
+  ```
+  ---
+  title: 标签
+  date: 2017-12-16 20:29:54
+  type: "tags"
+  comments: false
+  ---
+  ```
 
 ## 问题
 
@@ -57,4 +85,5 @@ Template render error: (unknown path) [Line 4, Column 2]
 
 
 [hexo]:https://hexo.io/
+[github pages]:https://pages.github.com/
 
